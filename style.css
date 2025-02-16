@@ -1,0 +1,159 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2e2e2e;
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+}
+
+.notepad {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.notepad::before,
+.notepad::after {
+  content: '';
+  position: absolute;
+  background-color: #f9f9f9;
+  height: 100%;
+  width: 50%;
+  z-index: -1;
+}
+
+.notepad::before {
+  left: 0;
+  border-radius: 15px 0 0 15px;
+}
+
+.notepad::after {
+  right: 0;
+  border-radius: 0 15px 15px 0;
+}
+
+.header {
+  background-color: #3c3c3c;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.category {
+  background-color: #ff69c0;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.category:hover {
+  background-color: #460064;
+}
+
+.todo-list {
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.todo-item {
+  position: relative;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.todo-item:hover {
+  background-color: #f0f0f0;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.category img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.task-name {
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0%, -50%);
+  width: 16px;
+  height: 16px;
+  background-color: #ff48d4;
+  border-radius: 3px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.todo-item.completed .checkmark::after {
+  content: '\2713';
+  font-size: 12px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.active-category {
+  background-color: #460064 !important;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.active-category img {
+  filter: brightness(1.2) saturate(1.5) hue-rotate(80deg);
+}
+.active-category {
+  background-color: #460064 !important;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.active-category img {
+  filter: brightness(1.2) saturate(1.5) hue-rotate(80deg);
+}
